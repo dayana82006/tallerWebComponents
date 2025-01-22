@@ -1,64 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-    <script src="js/bootstrap/bootstrap.min.js"></script>
-    <script type="module" src="app.js" defer></script>
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="container">
-      
-      <div class="row justify-content-md-center mt-3">
-        <div class="col-1">
-        </div>
-        <div class="col-10">
-          <div class="card">
-            <div class="card-header">
-              Facturación
-            </div>
-            <div class="card-body">
-              <form class="row">
-                <header-component></header-component>
-                <div class="col-12">
-                  <div class="card border-warning mb-3"
-                    style="max-width: 100%;">
-                    <div class="card-header">Cuerpo medico</div>
-                    <div class="card-body">
-                      <h5 class="card-title">Registre aqui el cuerpo medico</h5>
-                      <button type="button" class="btn btn-dark"
-                        id="addDoctor">+</button>
-                      <div class="container detailDoctors">
 
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="card border-info mb-3" style="max-width: 100%;">
-                    <div class="card-header">Plantel Jugadores</div>
-                    <div class="card-body">
-                      <h5 class="card-title">Registro de jugadores</h5>
-                      <button type="button" class="btn btn-dark"
-                        id="addPlayer">+</button>
-                      <div class="container detailPlayers">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Estilos globales -->
+  <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Scripts -->
+  <script src="js/bootstrap/bootstrap.min.js" defer></script>
+  <script type="module" src="app.js" defer></script>
+  <title>Factura</title>
+</head>
 
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 justify-content-md-center">
-                  <button type="submit" class="btn btn-primary">Sign in</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-        <div class="col-1">
-        </div>
-      </div>
-    </div>
-  </body>
+<body>
+ 
+  <div class="container">
+    <h1 class="text-center my-4">Facturación</h1>
+    <!-- Componente personalizado -->
+    <header-component>
+      <!-- Fallback en caso de que el componente no se cargue -->
+      <p>Loading...</p>
+    </header-component>
+  </div>
+</body>
+
 </html>
