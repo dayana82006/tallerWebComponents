@@ -31,13 +31,27 @@ export class HeaderComponent extends HTMLElement {
             </div>
             <form>
               <div class="row">
-                <div class="col-6">
+                <div class="col-12">
+
                   <label class="form-label">Nro Id:</label>
-                  <input class="form-control" type="text" name="idUsuario">
-                  <label for="nameuser" class="form-label">Nombre:</label>
+                  <input for="" class = "form-control" type = "text">
+                  </div>
+                <div class= "col-6"> 
+                <label for="nameuser" class="form-label">Nombre: </label>
                   <input class="form-control" type="text" name="nameuser" id="nameuser">
-                  <label for="exampleInputEmail1" class="form-label">Email address:</label>
-                  <input class="form-control" type="email" id="exampleInputEmail1">
+                  </div>
+                <div class= "col-6">  
+                  <label for="lastNameUser" class="form-label">Apellido: </label>
+                  <input class="form-control" type="text" name="lastNameUser" id="lastNameUser">
+                </div>
+                <div class= "col-6"> 
+
+                  <label for="emailUser" class="form-label">Correo electronico: </label>
+                  <input class="form-control" type="email" id="emailUser">
+                </div>
+                <div class= "col-6">
+                <label for="adressUser" class="form-label">Direccion: </label>
+                <input class="form-control" type="text" id="adressUser">
                 </div>
               </div>
             </form>
