@@ -14,16 +14,22 @@
 </head>
 
 <body>
- 
+
   <div class="container">
     <h1 class="text-center my-4">Facturación</h1>
     <!-- Componente personalizado -->
-    <header-component>
-      <!-- Fallback en caso de que el componente no se cargue -->
-      <p>Loading...</p>
-    </header-component>
+    <header-component></header-component>
+  <hr>
+    <products-component></products-component>
+  <hr>
+    <resumen-component></resumen-component>
+  <hr>
+  <total-component></total-component>
+  <hr>
+  <div class="container">
+    <input id="saveFactura" class="btn btn-primary" type="submit"></input>
+  </body>
   </div>
-  <button id="saveFactura" class="btn btn-primary">Guardar factura</button>
-</body>
+  
 
 </html>
