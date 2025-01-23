@@ -1,7 +1,7 @@
-export class ProductsComponent extends HTMLElement{
-    constructor(){
-        super();
-        this.attachShadow({mode:'open'});
+export class ProductsComponent extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
 
     // Crear el link para importar el CSS
     const style = document.createElement('link');
@@ -11,12 +11,18 @@ export class ProductsComponent extends HTMLElement{
     // Agregar la plantilla HTML del componente
     const template = document.createElement('template');
     template.innerHTML = /*html*/ `
-    
     <style>
-      h3{
+      h3 {
         color: rgb(56, 163, 192);
         text-shadow: 2px 4px 4px rgb(196, 196, 196);
-        }
+      }
+      .product-fields {
+        margin-bottom: 10px;
+      }
+      .remove-btn {
+        color: red;
+        cursor: pointer;
+      }
     </style>
     <div class="container">
       <div class="card">
@@ -31,25 +37,27 @@ export class ProductsComponent extends HTMLElement{
           </div>
         </div>
         <div class="card-body">
-          <form>
-             <div class="row">
-                <div class="col-6">
-                  <label class="form-label">Cod Producto: </label>
-                  <input for="codProducto" type="text" class="form-control name=" codeProduct" id="codeProduct">
-                </div>
-                <div class="col-6">
-                  <label class="form-label">Nombre del producto: </label>
-                  <input type="text" for="nameP" name="nameP" id="nameP" class="form-control">
-                </div>
-                <div class="col-6">
-                  <label class="form-label">Valor unit: </label>
-                  <input type="text" class="form-control" name="valorUnit" id="valorUnit" for="valorUnit">
-                </div>
-                <div class="col-6">
-                  <label class="form-label">Cantidad: </label>
-                  <input type="number" class="form-control" name="cantidad" id="cantidad" for="cantidad">
-                </div>      
-              </div>
+          <form id="productForm">
+          <div class="row">
+          <div class="col-6">
+            <label class="form-label">Cod Producto: </label>
+            <input type="text" class="form-control" name="codeProduct" required>
+          </div>
+          <div class="col-6">
+            <label class="form-label">Nombre del producto: </label>
+            <input type="text" class="form-control" name="nameP" required>
+          </div>
+          <div class="col-6">
+            <label class="form-label">Valor unit: </label>
+            <input type="text" class="form-control" name="valorUnit" required>
+          </div>
+          <div class="col-6">
+            <label class="form-label">Cantidad: </label>
+            <input type="number" class="form-control" name="cantidad" required>
+          </div>
+        
+        </div>
+            <div id="productList"></div>
           </form>
         </div>
       </div>
@@ -59,13 +67,50 @@ export class ProductsComponent extends HTMLElement{
     // Agregar el CSS y la plantilla al Shadow DOM
     this.shadowRoot.appendChild(style);
     this.shadowRoot.appendChild(template.content.cloneNode(true));
-  
-    };
-    connectedCallback(){
-      const btnMore = this.shadowRoot.querySelector('#btnMore');
+  }
 
-    }
-};
- 
+  connectedCallback() {
+    const btnMore = this.shadowRoot.querySelector('#btnMore');
+    const productList = this.shadowRoot.querySelector('#productList');
+
+    // Evento para agregar un nuevo conjunto de campos
+    btnMore.addEventListener('click', () => {
+      const productField = document.createElement('div');
+      productField.classList.add('product-fields');
+      productField.innerHTML = /*html*/ `
+        <div class="row">
+          <div class="col-6">
+            <label class="form-label">Cod Producto: </label>
+            <input type="text" class="form-control" name="codeProduct" required>
+          </div>
+          <div class="col-6">
+            <label class="form-label">Nombre del producto: </label>
+            <input type="text" class="form-control" name="nameP" required>
+          </div>
+          <div class="col-6">
+            <label class="form-label">Valor unit: </label>
+            <input type="text" class="form-control" name="valorUnit" required>
+          </div>
+          <div class="col-6">
+            <label class="form-label">Cantidad: </label>
+            <input type="number" class="form-control" name="cantidad" required>
+          </div>
+          <div class="col-12 text-end mt-2">
+            <button type="button" class="btn btn-danger">X</button>
+          </div>
+        </div>
+      `;
+
+      // Añadir el nuevo campo de producto a la lista
+      productList.appendChild(productField);
+
+      // Evento para eliminar el campo de producto
+      const removeBtn = productField.querySelector('.btn-danger');
+      removeBtn.addEventListener('click', () => {
+        productField.remove();
+      });
+    });
+  }
+}
 
 customElements.define('products-component', ProductsComponent);

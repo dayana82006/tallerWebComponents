@@ -74,6 +74,7 @@ export class HeaderComponent extends HTMLElement {
     
     // Guardar el nuevo número de factura en localStorage
     localStorage.setItem('lastFactura', lastFactura);
+    
   }
 }
 
