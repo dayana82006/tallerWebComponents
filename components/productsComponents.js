@@ -19,10 +19,7 @@ export class ProductsComponent extends HTMLElement {
       .product-fields {
         margin-bottom: 10px;
       }
-      .remove-btn {
-        color: red;
-        cursor: pointer;
-      }
+     
     </style>
     <div class="container">
       <div class="card">
