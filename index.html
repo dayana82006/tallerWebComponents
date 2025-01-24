@@ -19,18 +19,46 @@
     <h1 class="text-center my-4">Facturación</h1>
     <!-- Componente personalizado -->
     <header-component></header-component>
-  <hr>
+    <hr>
     <products-component></products-component>
-  <hr>
-    <resumen-component></resumen-component>
-  <hr>
-  <total-component></total-component>
-  <hr>
-  <div class="container">
-    <input id="saveFactura" class="btn btn-primary" type="submit">
-  </input>
-  </body>
-  </div>
+    <hr>
   
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" colspan="7" class="text-center">Resumen de Compra</th>
+        </tr>
+        <tr>
+          <th scope="col">Nro </th>
+          <th scope="col">Nombre</th>
+          <th scope="col">V unit</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Sub Total</th>
+          <th scope="col">Acción</th>
+        </tr>
+      </thead>
+      <tbody id="table">
+        <!-- Aquí se agregarán dinámicamente las filas -->
+      </tbody>
+    </table>
+
+    <hr>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 id="subtotal" >Subtotal: </h2>
+          <h3 id="iva">IVA (19%): </h3>
+          <h4 id="total">Total: </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+    <hr>
+    <div class="container">
+      <input id="saveFactura" class="btn btn-dark" type="submit">
+    </div>
+  </div>
+
+</body>
 
 </html>
