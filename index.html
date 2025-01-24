@@ -10,6 +10,8 @@
   <!-- Scripts -->
   <script src="js/bootstrap/bootstrap.min.js" defer></script>
   <script type="module" src="app.js" defer></script>
+  <script type="module" defer src="gestor.js"></script>
+
   <title>Factura</title>
 </head>
 
@@ -23,40 +25,12 @@
     <products-component></products-component>
     <hr>
   
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col" colspan="7" class="text-center">Resumen de Compra</th>
-        </tr>
-        <tr>
-          <th scope="col">Nro </th>
-          <th scope="col">Nombre</th>
-          <th scope="col">V unit</th>
-          <th scope="col">Cantidad</th>
-          <th scope="col">Sub Total</th>
-          <th scope="col">Acción</th>
-        </tr>
-      </thead>
-      <tbody id="table">
-        <!-- Aquí se agregarán dinámicamente las filas -->
-      </tbody>
-    </table>
+    <table class="table"></table>
 
-    <hr>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h2 id="subtotal" >Subtotal: </h2>
-          <h3 id="iva">IVA (19%): </h3>
-          <h4 id="total">Total: </h4>
-        </div>
-      </div>
-    </div>
-  </div>
-    <hr>
     <div class="container">
       <input id="saveFactura" class="btn btn-dark" type="submit">
     </div>
+    <hr>
   </div>
 
 </body>

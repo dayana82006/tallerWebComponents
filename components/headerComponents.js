@@ -32,7 +32,7 @@ export class HeaderComponent extends HTMLElement {
               <div class="row">
                 <div class="col-12">
                   <label class="form-label">Nro Id:</label>
-                  <input for="" class="form-control" type="text">
+                  <input for="" class="form-control" type="text" name="idUser">
                 </div>
                 <div class="col-6"> 
                   <label for="nameuser" class="form-label">Nombre: </label>
