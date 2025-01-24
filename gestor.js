@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
           row.querySelectorAll('td').forEach(cell => {
             cell.textContent = '';
           });
+          
         });
 
       }).catch((error) => {
