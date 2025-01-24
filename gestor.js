@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
       
       // Obtener datos del HeaderComponent
       const nroId = headerComponent.shadowRoot.querySelector('#nroFactura').textContent.split(': ')[1];
+      const idUser = headerComponent.shadowRoot.querySelectorAll('#idUser').value;
       const nameuser = headerComponent.shadowRoot.querySelector('#nameuser').value.trim();
       const lastNameUser = headerComponent.shadowRoot.querySelector('#lastNameUser').value.trim();
       const emailUser = headerComponent.shadowRoot.querySelector('#emailUser').value.trim();
@@ -64,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Mostrar la factura procesada
         const facturaDisplay = document.createElement('div');
         facturaDisplay.innerHTML = `
+        <div class = "container" 
           <h2>Factura N°: ${dataFactura.nroFact.header.nroId}</h2>
           <p><strong>Nombre:</strong> ${dataFactura.nroFact.header.nombres} ${dataFactura.nroFact.header.apellidos}</p>
           <p><strong>Email:</strong> ${dataFactura.nroFact.header.email}</p>
@@ -77,12 +79,13 @@ document.addEventListener('DOMContentLoaded', () => {
           <p><strong>Subtotal:</strong> $${dataFactura.nroFact.sumary.subtotal}</p>
           <p><strong>IVA:</strong> $${dataFactura.nroFact.sumary.iva}</p>
           <p><strong>Total:</strong> $${dataFactura.nroFact.sumary.total}</p>
-        `;
+        </div>
+          `;
         document.body.appendChild(facturaDisplay); // Puedes agregar este div en cualquier lugar de tu HTML
 
         // Limpiar los campos del formulario
-        headerComponent.shadowRoot.querySelector('#nroFactura').textContent = 'Factura N°:';
-        headerComponent.shadowRoot.querySelector('#idUser') = '';
+   
+        headerComponent.shadowRoot.querySelector('#idUser').value= '';
         headerComponent.shadowRoot.querySelector('#nameuser').value = '';
         headerComponent.shadowRoot.querySelector('#lastNameUser').value = '';
         headerComponent.shadowRoot.querySelector('#emailUser').value = '';
